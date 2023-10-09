@@ -8,13 +8,16 @@ body{
     font-family: var(--font);
     background-color: var(--dark);
     color: var(--light);
-    margin: 0;
+    margin: auto;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
 }
-
+section{
+    height: 70 vh;
+}
 .container {
     
     justify-content: center;
@@ -25,4 +28,18 @@ body{
     padding: 15px;
     margin: 5vh 10vw;
  
+}
+.answers{
+    padding: 5px 0px 10px 0px;
+}
+
+.answerBtn{
+    display: inline-flex;
+    width: 80%;
+}
+.nextBtn {
+    width: 20%;
+}
+footer {
+    justify-content: last baseline;
 }
