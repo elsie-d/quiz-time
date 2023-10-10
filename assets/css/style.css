@@ -32,12 +32,15 @@ section{
 .answers{
     padding: 5px 0px 10px 0px;
 }
+.hide{
+    display: none;
+}
 
 .answerBtn{
     display: inline-flex;
     width: 80%;
 }
-.nextBtn {
+.nextBtn, .startBtn {
     width: 20%;
 }
 footer {
