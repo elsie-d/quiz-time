@@ -1,20 +1,22 @@
 :root{
     --fontFam: 'Exo 2', sans-serif;
+    --primary: #495464;
+    --secondary: #BBBFCA;
 }
 
 body{
-    background-color: aquamarine;
+    background-color: var(--primary);
     
 
 
 }
 
 .appContainer {
-    background-color: azure;
+    background-color: #F4F4F2;
     width: 70%;
     margin: auto;
     padding: 10px;
-    border: 5px solid #000;
+    border: 5px solid #040D12;
     border-radius: 5px;
     display:block ; 
     justify-content: center;
@@ -25,7 +27,7 @@ body{
 .appContainer h1 {
     font-size: 30px;
     font-family: var(--fontFam);
-    border-bottom: 1px solid blueviolet ;
+    border-bottom: 1px solid var(--primary) ;
 }
 #quiz {
     padding: 5px 15px;
@@ -33,13 +35,13 @@ body{
 }
 
 .ansBtn {
-background-color: chocolate;
+background-color: #E8E8E8;
 color: #000;  
 display: block;  
 margin-top: 5px ;
 width: 100%;
 text-align: left;
-border: 1px solid green;
+border: 1px solid var(--primary);
 border-radius: 40px;
 font-size: 14px;
 line-height: 2;
@@ -49,28 +51,31 @@ padding-left: 15px;
 }
 
 .ansBtn:hover:not([disabled]) {
-background-color: darkslateblue;
+background-color: var(--secondary);
 color: white;
 }
 
-#nextBtn {
+#startBtn, #nextBtn {
     margin-top: 20px;
-    background-color: blueviolet;
+    background-color: var(--secondary);
     font-size: 14px;
     line-height: 2;
-    border: 1px solid green;
+    border: 1px solid var(--primary);
     border-radius: 4px;
-    display: none;
+    
     padding: 5px 15px;
     /*justify-content: right;*/
 
 }
+#nextBtn{
+    display: none;
+}
 
 .correct {
-    background-color: gold;
+    background-color: #6b9c7b;
 
 }
 
 .wrong {
- background-color: crimson;
+ background-color: #9c6b6b;
 }
