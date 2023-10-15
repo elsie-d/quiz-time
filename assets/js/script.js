@@ -71,17 +71,20 @@ var timeInterval
 
 
 function startTimer(){
-    timer = 20
+   timer = 20
     timeInterval = setInterval( function(){
         timer--
         timerP.textContent = timer + " seconds left" 
-        if (timer === 0) {
+        if (timer <= 0) {
             clearInterval(timeInterval)
             alert("Time's up, better luck next time!")
             showScore()
         }
     }, 1000) 
 }
+
+
+
 
 
 
@@ -161,7 +164,9 @@ function selectAnswer(event){
             score++;
         }
         else {
+            timer -= 5;
             selectBtn.classList.add("wrong");
+
            
 
         }
