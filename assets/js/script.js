@@ -14,61 +14,62 @@ THEN I can save my initials and my score
 
 
 const startBtn = document.getElementById('start')
-
+const answers = document.getElementById('answerBtn')
+const 
 startBtn.addEventListener('click', startQuiz)
 
 
-const questions = [
+var questions = [
     {
-        question: "What does CSS stand for?"
-        answers:[
+        question: "What does CSS stand for?",
+        answers: [
             {text: "Cascsding Style Sheet", correct: true},
             {text: "Can Sometimes Style", correct: false},
             {text: "Cascading Side Sheet", correct: false},
             {text: "Create Some Styles", correct: false}
         ]
-    }
+    },
     {
-        question: "Complete the sentence. n\ JavaScript porvides __________."
+        question: "Complete the sentence. n\ JavaScript porvides __________.",
         answers: [
             {text:"structure", correct: false},
             {text:"styling", correct: false},
             {text:"functionality", correct: true},
             {text:"none of the above", correct: false}
         ]
-    }
+    },
     {
-        question: "What does the operator '===' mean?"
-        answer: [
+        question: "What does the operator '===' mean?",
+        answers: [
             {text:"not equal to" , correct: false },
             {text:"absolutley equal to" , correct: true },
             {text:"partialiy equal to" , correct: false },
             {text:"none of the above" , correct: false },
         ]
-    }
+    },
     {
-        question: ""
-        answer: [
+        question: "Lorem ipsum",
+        answers: [
             {text: "" , correct: false},
             {text: "" , correct: false},
             {text: "" , correct: false},
+            {text: "" , correct: true}
+        ]
+    },
+    {
+        question: "",
+        answers: [
+            {text: "" , correct: false},
+            {text: "" , correct: false},
+            {text: "" , correct: true},
             {text: "" , correct: false}
         ]
     }
-    {
-        question: ""
-        answer: [
-            {text: "" , correct: false},
-            {text: "" , correct: false},
-            {text: "" , correct: false},
-            {text: "" , correct: false}
-        ]
-    }
-
-]
+];
 
 //Start quiz
-function startQuiz() {
+function startQuiz(event) {
+    event.defaultPrevented;
     console.log('started');
     startBtn.classList.add('hide');
 
