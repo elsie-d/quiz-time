@@ -49,6 +49,9 @@ var questions = [
     }
 ];
 
+//var initialsInput = document.getElementById(("initials").value);
+//var initialsValue = localStorage.setItem("initialsInput", initialsInput);
+//var initialsOutput = localStorage.getItem("initialsInput", initialsInput);
 var startBtn = document.getElementById("startBtn");
 var questionEl = document.getElementById("question");
 var answerBtn = document.getElementById("answer-choices");
@@ -62,6 +65,15 @@ var timer = 0;
 let currentQuestionIndex = 0;
 let score = 0;
 var timeInterval
+
+
+function storeInitials(){
+var initialsInput = document.getElementById(("initials").value);
+var initialsValue = localStorage.setItem("initialsInput", initialsInput);
+var initialsOutput = localStorage.getItem("initialsInput", initialsInput);
+}
+
+
 
 
 // GIVEN I am taking a code quiz
@@ -109,7 +121,7 @@ function startQuiz() {
     nextBtn.innerHTML = "Next >"
     showQuestion();  
     startTimer(); 
-
+    
    
 }
 
@@ -134,19 +146,16 @@ function showQuestion() {
         button.addEventListener('click', selectAnswer);
     });
 
-
+}
+    
+    
     //THEN a timer starts and I am presented with a question
     //WHEN I answer a question
     //THEN I am presented with another question
     //WHEN I answer a question incorrectly
-    //THEN time is subtracted from the clock    <----------------------------------------- TO DO
+    //THEN time is subtracted from the clock   
 
 
-
-
-
-
-}
 
 function resetState(){
     nextBtn.style.display = "none";
@@ -190,7 +199,8 @@ function selectAnswer(event){
 function showScore(){
     resetState();
     clearInterval(timeInterval);
-    questionEl.innerHTML = "You scored: "+ score + " .";   
+    var storedInitials = localStorage.getItem("initials")
+    questionEl.innerHTML = storedInitials + " you scored: " + score + " .";   
     nextBtn.innerHTML = "Try Again";
     nextBtn.style.display = "block"  
     localStorage.setItem("score", score);

@@ -24,9 +24,13 @@
                 <h1>JavaScript 101 Quiz</h1>
                 
                 <div id="welcome">
-                 <h2>You think you know JavaScript?</h2>  
-                 <h3>Click "Start" to test your knowledge:</h3>   
-                 <button id="startBtn">Let's do this</button>   
+                    <h2>You think you know JavaScript?</h2>  
+                    <h3>Enter your initials to test your knowledge:</h3>  
+                    <form>
+                         <label for="initials"> <input id="initials" type="text" required /></label>
+                         <br><br>
+                         <button onclick="storeInitials()" id="startBtn" type="button">Let's do this!</button>  
+                      </form>    
 
                 </div>
                 <div id="quiz">
