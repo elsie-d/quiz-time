@@ -68,7 +68,7 @@ var timeInterval
 
 
 function storeInitials(){
-var initialsInput = document.getElementById(("initials").value);
+var initialsInput = document.getElementById("initials").value;
 var initialsValue = localStorage.setItem("initialsInput", initialsInput);
 var initialsOutput = localStorage.getItem("initialsInput", initialsInput);
 }
@@ -193,13 +193,13 @@ function selectAnswer(event){
 //WHEN all questions are answered or the timer reaches 0
 //THEN the game is over
 //WHEN the game is over
-//THEN I can save my initials and my score     <-------------------------------- TO DO
-
+//THEN I can save my initials and my score   
 
 function showScore(){
     resetState();
     clearInterval(timeInterval);
-    var storedInitials = localStorage.getItem("initials")
+    var storedInitials = localStorage.getItem("initialsInput")
+    timerP.textContent = ""
     questionEl.innerHTML = storedInitials + " you scored: " + score + " .";   
     nextBtn.innerHTML = "Try Again";
     nextBtn.style.display = "block"  
@@ -230,4 +230,3 @@ nextBtn.addEventListener('click', () =>{
 })
 
 //startQuiz();
-
