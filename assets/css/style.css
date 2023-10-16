@@ -6,12 +6,17 @@
 
 body{
     background-color: var(--primary);
+    margin-top: 10vh;
     
 
 
 }
 
-.appContainer {
+.card {
+    background-color: #F4F4F2; 
+    margin: auto;
+}
+/*.appContainer {
     background-color: #F4F4F2;
     width: 70%;
     margin: auto;
@@ -22,15 +27,20 @@ body{
     justify-content: center;
     font-family: var(--fontFam);
 
-}
+}*/
 
 .appContainer h1 {
     font-size: 30px;
     font-family: var(--fontFam);
     border-bottom: 1px solid var(--primary) ;
 }
+
+input {
+    line-height: 1.5em;
+    
+}
 #quiz {
-    padding: 5px 15px;
+    /*padding: 5px 15px;*/
     display: none;
 }
 

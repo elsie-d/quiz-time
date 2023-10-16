@@ -49,9 +49,7 @@ var questions = [
     }
 ];
 
-//var initialsInput = document.getElementById(("initials").value);
-//var initialsValue = localStorage.setItem("initialsInput", initialsInput);
-//var initialsOutput = localStorage.getItem("initialsInput", initialsInput);
+
 var startBtn = document.getElementById("startBtn");
 var questionEl = document.getElementById("question");
 var answerBtn = document.getElementById("answer-choices");
@@ -68,8 +66,9 @@ var timeInterval
 
 
 function storeInitials(){
+document.getElementById("initials").style.textTransform = "uppercase";    
 var initialsInput = document.getElementById("initials").value;
-var initialsValue = localStorage.setItem("initialsInput", initialsInput);
+var initialsValue = localStorage.setItem("initialsInput", initialsInput)
 var initialsOutput = localStorage.getItem("initialsInput", initialsInput);
 }
 
@@ -83,7 +82,7 @@ var initialsOutput = localStorage.getItem("initialsInput", initialsInput);
 
 
 function startTimer(){
-   timer = 20
+   timer = 31
     timeInterval = setInterval( function(){
         timer--
         timerP.textContent = timer + " seconds left" 
@@ -173,7 +172,7 @@ function selectAnswer(event){
             score++;
         }
         else {
-            timer -= 5;
+            timer -= 3;
             selectBtn.classList.add("wrong");
 
            
@@ -200,7 +199,7 @@ function showScore(){
     clearInterval(timeInterval);
     var storedInitials = localStorage.getItem("initialsInput")
     timerP.textContent = ""
-    questionEl.innerHTML = storedInitials + " you scored: " + score + " .";   
+    questionEl.innerHTML = storedInitials + " you scored: " + score + "/5 ";   
     nextBtn.innerHTML = "Try Again";
     nextBtn.style.display = "block"  
     localStorage.setItem("score", score);
