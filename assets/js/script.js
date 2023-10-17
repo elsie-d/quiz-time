@@ -56,7 +56,8 @@ var answerBtn = document.getElementById("answer-choices");
 var nextBtn = document.getElementById("nextBtn");
 var timerP = document.getElementById('timer')
 var timer = 0;
-
+var scoreArr = JSON.parse(localStorage.getItem("scoreArr")) || [];
+//console.log(scoreBoard)
 
 
 
@@ -66,10 +67,10 @@ var timeInterval
 
 
 function storeInitials(){
-document.getElementById("initials").style.textTransform = "uppercase";    
+//document.getElementById("initials").style.textTransform = "uppercase";    
 var initialsInput = document.getElementById("initials").value;
-var initialsValue = localStorage.setItem("initialsInput", initialsInput)
-var initialsOutput = localStorage.getItem("initialsInput", initialsInput);
+var initialsValue = localStorage.setItem("initialsInput", initialsInput);
+//var initialsOutput = localStorage.getItem("initialsInput", initialsInput);
 }
 
 
@@ -117,7 +118,7 @@ startBtn.addEventListener("click", function(event){
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    nextBtn.innerHTML = "Next >"
+    nextBtn.innerHTML = "Next >";
     showQuestion();  
     startTimer(); 
     
@@ -185,6 +186,7 @@ function selectAnswer(event){
             button.disabled = true;
         });
         nextBtn.style.display = "block";
+        
     
 }
 
@@ -194,18 +196,32 @@ function selectAnswer(event){
 //WHEN the game is over
 //THEN I can save my initials and my score   
 
+
+
 function showScore(){
     resetState();
     clearInterval(timeInterval);
     var storedInitials = localStorage.getItem("initialsInput")
+    localStorage.setItem("score", score);
+   
+
+    var scoreBoard = {
+        Initials: storedInitials,
+        score: score,
+    };
+
+    var scoreBoardStr = JSON.stringify(scoreBoard);
+    localStorage.setItem(scoreBoard, scoreBoardStr);
+    scoreArr.push(scoreBoard);
+    console.log(scoreBoard);
+    console.log(scoreBoardStr);
+
+
     timerP.textContent = ""
     questionEl.innerHTML = storedInitials + " you scored: " + score + "/5 ";   
     nextBtn.innerHTML = "Try Again";
-    nextBtn.style.display = "block"  
-    localStorage.setItem("score", score);
+    nextBtn.style.display = "block" ;
 
-
-  
 }
 
 function handleNextBtn(){
@@ -217,9 +233,7 @@ if(currentQuestionIndex < questions.length && timer > 0){
 }
 }
 
-function handleTryAgain() {
 
-}
 
 nextBtn.addEventListener('click', () =>{
     if(currentQuestionIndex < questions.length){

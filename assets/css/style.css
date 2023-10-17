@@ -65,7 +65,7 @@ background-color: var(--secondary);
 color: white;
 }
 
-#startBtn, #nextBtn {
+#startBtn, #nextBtn, #scoresBtn {
     margin-top: 20px;
     background-color: var(--secondary);
     font-size: 14px;
@@ -77,7 +77,8 @@ color: white;
     /*justify-content: right;*/
 
 }
-#nextBtn{
+
+#nextBtn, #scoreBtn{
     display: none;
 }
 
